@@ -7,11 +7,12 @@
 
     if(sum(tab_grafico4$`2007` > 0) || sum(tab_grafico4$`2008` > 0) || sum(tab_grafico4$`2009` > 0) || sum(tab_grafico4$`2010` > 0) || sum(tab_grafico4$`2011` > 0) ||
        sum(tab_grafico4$`2012` > 0) || sum(tab_grafico4$`2013` > 0) || sum(tab_grafico4$`2014` > 0) || sum(tab_grafico4$`2015` > 0) || sum(tab_grafico4$`2016` > 0) ||
-       sum(tab_grafico4$`2017` > 0) || sum(tab_grafico4$`2018` > 0) || sum(tab_grafico4$`2019` > 0) || sum(tab_grafico4$`2020` > 0)|| sum(tab_grafico4$`2021` > 0)){
+       sum(tab_grafico4$`2017` > 0) || sum(tab_grafico4$`2018` > 0) || sum(tab_grafico4$`2019` > 0) || sum(tab_grafico4$`2020` > 0) || sum(tab_grafico4$`2021` > 0) ||
+       sum(tab_grafico4$`2022` > 0)){
       # -----------------------------------------------------------------------------------------------------------
       tab_grafico4 <- tab_grafico4 %>%
-        select(names,"2007", "2008", "2009", "2010","2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")%>%
-        pivot_longer(cols = "2007":"2021", names_to = "anos", values_to = "valores")
+        select(names,"2007", "2008", "2009", "2010","2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022")%>%
+        pivot_longer(cols = "2007":"2022", names_to = "anos", values_to = "valores")
 
       a <- tab_grafico4 %>%
         filter("Ações" == names)
@@ -37,7 +38,7 @@
                  position = position_nudge(x = .30), width = .3)+
 
         scale_y_continuous("US$ milhões")+
-        scale_x_yearmon(NULL, format = "%Y", breaks = seq(2007,2021))+
+        scale_x_yearmon(NULL, format = "%Y", breaks = seq(2007,2022))+
         scale_fill_manual(NULL, values = saturation(c("#191970","#3CB371","#FF8C00"), scalefac(0.8)))+
         theme_classic ()+
         theme(panel.grid = element_blank(), # remove as linhas do corpo do gráfico
