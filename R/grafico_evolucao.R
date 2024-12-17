@@ -1,10 +1,5 @@
-#'Gráfico de evolução
-#'
-#' @param tabela Data frame contendo a tabela de dados
-#'
-#' @return Gráfico mostrando os valores de investimento entre o Brasil e o país alvo ao longo dos anos
+
 #' @export
-#'
 
   grafico_evolucao <- function(tabela){
 
@@ -37,9 +32,9 @@
       ggplot2::labs(title = NULL,
                     caption = NULL,
                     x = NULL, y = NULL)+
-      ggplot2::scale_y_continuous(labels = scales::label_number_si())+
-      ggplot2::scale_x_continuous(limits = c(2007, 2021),
+      ggplot2::scale_y_continuous(labels = scales::label_number(scale_cut = scales::cut_si("")))+
+      ggplot2::scale_x_continuous(limits = c(2007, 2022),
                                   breaks = scales::breaks_pretty(15))+
-      ggplot2::labs(title = glue::glue("Brasil - {pais}, evolução do investimento até 2021"),
+      ggplot2::labs(title = glue::glue("Brasil - {pais}, evolução do investimento até 2022"),
                     caption = "Fonte: Banco Central", x = NULL, y = NULL)
   }
