@@ -17,6 +17,6 @@
       scale_y_reverse(breaks = scales::breaks_pretty(), labels = scales::label_ordinal())+
       scale_x_continuous(labels = scales::label_percent())+
       facet_wrap(~tipo, scales = "free_y")+
-      ggplot2::labs(title = glue::glue("Brasil - {pais}, ranking e proporção de Investimentos, em 2021"),
+      ggplot2::labs(title = glue::glue("Brasil - {pais}, ranking e proporção de Investimentos, em 2022"),
                     caption = "Fonte: Banco Central", x = NULL, y = NULL)
   }
