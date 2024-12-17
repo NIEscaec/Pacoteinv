@@ -6,8 +6,8 @@
     tab_grafico3 <- tabela_IBD
 
     tab_grafico3 <- tab_grafico3 %>%
-      select(names,"2006", "2007", "2008", "2009", "2010","2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")%>%
-      pivot_longer(cols = "2006":"2021", names_to = "anos", values_to = "setor")
+      select(names,"2006", "2007", "2008", "2009", "2010","2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022")%>%
+      pivot_longer(cols = "2006":"2022", names_to = "anos", values_to = "setor")
     #------------------------------------------------------------------------------------------------------------------
 
     a <- tab_grafico3 %>%
@@ -36,7 +36,7 @@
         geom_line(aes(y = c$setor*10,group = "",  colour = "Fluxo-Participação no Capital(Invest. Imed)"), size = 1, linetype = 1) +
 
         scale_y_continuous("US$ milhões", sec.axis = sec_axis(~ . /10 ))+
-        scale_x_yearmon(NULL, format = "%Y", breaks = seq(2006,2021))+
+        scale_x_yearmon(NULL, format = "%Y", breaks = seq(2006,2022))+
         scale_color_manual(NULL, values = saturation(c("#6959CD","#99b765","#5d83ad"), scalefac(0.8)))+
         scale_fill_manual(NULL, values = saturation(c("#99b765","#5d83ad","#6959CD"), scalefac(0.8)))+
         theme_classic ()+
