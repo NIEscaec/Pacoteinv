@@ -23,10 +23,10 @@
                       x = NULL, y = NULL, caption = "") +
         ggplot2::coord_flip() +
         ggplot2::theme_minimal() +
-        ggplot2::scale_y_continuous(labels = scales::label_number_si()) +
+        ggplot2::scale_y_continuous(labels = scales::label_number(scale_cut = scales::cut_si(""))) +
         ggthemes::scale_fill_tableau() +
         tidytext::scale_x_reordered()+
-        ggplot2::labs(title = glue::glue("Brasil - {pais}, parceiros de investimento próximos, em 2021"),
+        ggplot2::labs(title = glue::glue("Brasil - {pais}, parceiros de investimento próximos, em 2022"),
                       caption = "Fonte: Banco Central", x = NULL, y = NULL)
 
   }
