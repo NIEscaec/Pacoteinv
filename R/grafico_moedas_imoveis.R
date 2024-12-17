@@ -4,8 +4,8 @@ grafico_moedas_imoveis <- function(tabela){
     tab_grafico5 <- tabela
 
     tab_grafico5 <- tab_grafico5 %>%
-      select(names,"2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021")%>%
-      pivot_longer(cols = "2007":"2021", names_to = "anos", values_to = "valores")
+      select(names,"2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022")%>%
+      pivot_longer(cols = "2007":"2022", names_to = "anos", values_to = "valores")
     #------------------------------------------------------------------------------------------------------------------
 
     a <- tab_grafico5 %>%
@@ -21,7 +21,7 @@ grafico_moedas_imoveis <- function(tabela){
         geom_bar(stat = "identity", aes(y = a$valores, fill = "Moedas/Depósitos" ), position = position_nudge(x = -.15), width = .3)+
         geom_bar(stat = "identity", aes(y = b$valores, fill = "Imóveis"  ), position = position_nudge(x = .15), width = .3) +
         scale_y_continuous("US$ milhões")+
-        scale_x_yearmon(NULL, format = "%Y", breaks = seq(2007,2021))+
+        scale_x_yearmon(NULL, format = "%Y", breaks = seq(2007,2022))+
         scale_fill_manual(NULL, values = saturation(c("#B22222","#5b80ab"), scalefac(0.8)))+
         theme_classic ()+
         theme(panel.grid = element_blank(), # remove as linhas do corpo do gráfico
