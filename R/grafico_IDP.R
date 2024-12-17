@@ -7,8 +7,8 @@ grafico_IDP <- function(tabela){
   tab_grafico1 <- tabela
 
   tab_grafico1 <- tab_grafico1 %>%
-    select(names,"2001":"2021")%>%
-    pivot_longer(cols = "2001":"2021", names_to = "anos", values_to = "setores")
+    select(names,"2001":"2022")%>%
+    pivot_longer(cols = "2001":"2022", names_to = "anos", values_to = "setores")
   #------------------------------------------------------------------------------------------------------------------
 
   a <- tab_grafico1 %>%
@@ -77,12 +77,3 @@ grafico_IDP <- function(tabela){
     print("Sem dados suficientes para gerar o gráfico!")
   }
 }
-
-
-
-
-
-
-
-
-
